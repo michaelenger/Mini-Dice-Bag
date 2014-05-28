@@ -10,40 +10,82 @@
 
 @interface MainViewController ()
 
-- (void)roll;
+@property (strong, nonatomic) NSTimer *rollTimer;
+
+- (NSArray *)roll;
+- (void)rollAnimated:(BOOL)animated;
+- (void)rollThreaded;
+- (void)showResults:(NSArray *)results detailed:(BOOL)detailed;
 
 @end
 
 @implementation MainViewController
-@synthesize detailResultLabel, mainResultLabel;
+@synthesize detailResultLabel, mainResultLabel, rollTimer;
 
 int amount = 1;
 int die = 20;
+int rollCounter;
 
-- (void)roll
+- (NSArray *)roll
 {
-    NSString *detailText = [NSString stringWithFormat:@"%dd%d", amount, die];
     NSMutableArray *results = [NSMutableArray arrayWithCapacity:amount];
-    int total = 0;
     int result;
 
     for (int i = 0; i < amount; i++) {
         result = arc4random_uniform(die) + 1;
         results[i] = [NSNumber numberWithInt:result];
-        total += result;
     }
 
-    if (amount <= 8) {
-        NSArray *sortedArray = [results sortedArrayUsingSelector:@selector(compare:)];
-        NSNumber *num;
-        detailText = @"";
-        for (int i = 0; i < amount; i++) {
-            num = (NSNumber *)sortedArray[i];
-            detailText = [detailText stringByAppendingString:[NSString stringWithFormat:@" %d ", [num intValue]]];
+    return [results sortedArrayUsingSelector:@selector(compare:)];
+}
+
+- (void)rollAnimated:(BOOL)animated
+{
+    if (animated) {
+        if (self.rollTimer && [self.rollTimer isValid]) {
+            [self.rollTimer invalidate];
         }
+
+        rollCounter = 5; // @todo: randomize this?
+        [self showResults:[self roll] detailed:NO]; // prevents the delay effect when starting the timer
+        self.rollTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                                                          target:self
+                                                        selector:@selector(rollThreaded)
+                                                        userInfo:nil
+                                                         repeats:YES];
+    } else {
+        [self showResults:[self roll] detailed:YES];
+    }
+}
+
+- (void)rollThreaded
+{
+    if (--rollCounter <= 0) {
+        [self showResults:[self roll] detailed:YES];
+        [self.rollTimer invalidate];
+    } else {
+        [self showResults:[self roll] detailed:NO];
+    }
+}
+
+- (void)showResults:(NSArray *)results detailed:(BOOL)detailed
+{
+    NSString *detailText = @"";
+    int num;
+    int total = 0;
+
+    for (int i = 0; i < amount; i++) {
+        num = [(NSNumber *)results[i] intValue];
+        detailText = [detailText stringByAppendingString:[NSString stringWithFormat:@" %d ", num]];
+        total += num;
     }
 
-    detailResultLabel.text = detailText;
+    if (detailed) {
+        detailResultLabel.text = amount <= 8 ? detailText : [NSString stringWithFormat:@"%dd%d", amount, die];
+    } else {
+        detailResultLabel.text = @"";
+    }
+
     mainResultLabel.text = [NSString stringWithFormat:@"%d", total];
 }
 
@@ -53,7 +95,7 @@ int die = 20;
 {
     UIButton *button = (UIButton *)sender;
     die = [[button titleForState:UIControlStateNormal] intValue];
-    [self roll];
+    [self rollAnimated:YES];
 }
 
 - (IBAction)numberTapped:(id)sender
@@ -67,7 +109,7 @@ int die = 20;
         amount = [title intValue];
     }
 
-    [self roll];
+    [self rollAnimated:YES];
 }
 
 #pragma mark UIViewController
@@ -75,7 +117,7 @@ int die = 20;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self roll];
+    [self rollAnimated:NO];
 }
 
 @end
