@@ -10,4 +10,10 @@
 
 @interface MainViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UILabel *detailResultLabel;
+@property (strong, nonatomic) IBOutlet UILabel *mainResultLabel;
+
+- (IBAction)dieTapped:(id)sender;
+- (IBAction)numberTapped:(id)sender;
+
 @end
