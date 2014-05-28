@@ -37,6 +37,9 @@
 		4CBA6594193664CD00BA05CE /* d6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBA6584193664CD00BA05CE /* d6@2x.png */; };
 		4CBA6595193664CD00BA05CE /* d8.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBA6585193664CD00BA05CE /* d8.png */; };
 		4CBA6596193664CD00BA05CE /* d8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBA6586193664CD00BA05CE /* d8@2x.png */; };
+		4CBA65981936690C00BA05CE /* AppIcon60pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBA65971936690C00BA05CE /* AppIcon60pt@2x.png */; };
+		4CBA659B19366B6D00BA05CE /* AppIcon29pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBA659919366B6D00BA05CE /* AppIcon29pt@2x.png */; };
+		4CBA659C19366B6D00BA05CE /* AppIcon40pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBA659A19366B6D00BA05CE /* AppIcon40pt@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		4CBA6584193664CD00BA05CE /* d6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "d6@2x.png"; sourceTree = "<group>"; };
 		4CBA6585193664CD00BA05CE /* d8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = d8.png; sourceTree = "<group>"; };
 		4CBA6586193664CD00BA05CE /* d8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "d8@2x.png"; sourceTree = "<group>"; };
+		4CBA65971936690C00BA05CE /* AppIcon60pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60pt@2x.png"; sourceTree = "<group>"; };
+		4CBA659919366B6D00BA05CE /* AppIcon29pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29pt@2x.png"; sourceTree = "<group>"; };
+		4CBA659A19366B6D00BA05CE /* AppIcon40pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40pt@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +194,9 @@
 		4CBA6576193664CD00BA05CE /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4CBA65971936690C00BA05CE /* AppIcon60pt@2x.png */,
+				4CBA659919366B6D00BA05CE /* AppIcon29pt@2x.png */,
+				4CBA659A19366B6D00BA05CE /* AppIcon40pt@2x.png */,
 				4CBA6577193664CD00BA05CE /* d10.png */,
 				4CBA6578193664CD00BA05CE /* d100.png */,
 				4CBA6579193664CD00BA05CE /* d100@2x.png */,
@@ -294,7 +303,10 @@
 				4CBA6589193664CD00BA05CE /* d100@2x.png in Resources */,
 				4CBA6588193664CD00BA05CE /* d100.png in Resources */,
 				4C67E7291936632400CFD7A9 /* InfoPlist.strings in Resources */,
+				4CBA659B19366B6D00BA05CE /* AppIcon29pt@2x.png in Resources */,
 				4CBA658E193664CD00BA05CE /* d20.png in Resources */,
+				4CBA65981936690C00BA05CE /* AppIcon60pt@2x.png in Resources */,
+				4CBA659C19366B6D00BA05CE /* AppIcon40pt@2x.png in Resources */,
 				4CBA658D193664CD00BA05CE /* d2.png in Resources */,
 				4C67E7321936632400CFD7A9 /* Main.storyboard in Resources */,
 				4CBA6592193664CD00BA05CE /* d4@2x.png in Resources */,
