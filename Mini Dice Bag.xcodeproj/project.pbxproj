@@ -14,7 +14,7 @@
 		4C67E72B1936632400CFD7A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67E72A1936632400CFD7A9 /* main.m */; };
 		4C67E72F1936632400CFD7A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67E72E1936632400CFD7A9 /* AppDelegate.m */; };
 		4C67E7321936632400CFD7A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C67E7301936632400CFD7A9 /* Main.storyboard */; };
-		4C67E7351936632400CFD7A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67E7341936632400CFD7A9 /* ViewController.m */; };
+		4C67E7351936632400CFD7A9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67E7341936632400CFD7A9 /* MainViewController.m */; };
 		4C67E7371936632400CFD7A9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C67E7361936632400CFD7A9 /* Images.xcassets */; };
 		4C67E73E1936632400CFD7A9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C67E73D1936632400CFD7A9 /* XCTest.framework */; };
 		4C67E73F1936632400CFD7A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C67E71E1936632400CFD7A9 /* Foundation.framework */; };
@@ -45,8 +45,8 @@
 		4C67E72D1936632400CFD7A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C67E72E1936632400CFD7A9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4C67E7311936632400CFD7A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4C67E7331936632400CFD7A9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4C67E7341936632400CFD7A9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4C67E7331936632400CFD7A9 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		4C67E7341936632400CFD7A9 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		4C67E7361936632400CFD7A9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4C67E73C1936632400CFD7A9 /* Mini Dice BagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mini Dice BagTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C67E73D1936632400CFD7A9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -115,8 +115,8 @@
 				4C67E72D1936632400CFD7A9 /* AppDelegate.h */,
 				4C67E72E1936632400CFD7A9 /* AppDelegate.m */,
 				4C67E7301936632400CFD7A9 /* Main.storyboard */,
-				4C67E7331936632400CFD7A9 /* ViewController.h */,
-				4C67E7341936632400CFD7A9 /* ViewController.m */,
+				4C67E7331936632400CFD7A9 /* MainViewController.h */,
+				4C67E7341936632400CFD7A9 /* MainViewController.m */,
 				4C67E7361936632400CFD7A9 /* Images.xcassets */,
 				4C67E7251936632400CFD7A9 /* Supporting Files */,
 			);
@@ -249,7 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C67E7351936632400CFD7A9 /* ViewController.m in Sources */,
+				4C67E7351936632400CFD7A9 /* MainViewController.m in Sources */,
 				4C67E72F1936632400CFD7A9 /* AppDelegate.m in Sources */,
 				4C67E72B1936632400CFD7A9 /* main.m in Sources */,
 			);
@@ -456,6 +456,7 @@
 				4C67E74F1936632400CFD7A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C67E7501936632400CFD7A9 /* Build configuration list for PBXNativeTarget "Mini Dice BagTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +465,7 @@
 				4C67E7521936632400CFD7A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
