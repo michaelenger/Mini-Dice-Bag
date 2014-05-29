@@ -15,5 +15,6 @@
 
 - (IBAction)dieTapped:(id)sender;
 - (IBAction)numberTapped:(id)sender;
+- (IBAction)viewTapped:(id)sender;
 
 @end

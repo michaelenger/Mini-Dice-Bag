@@ -48,7 +48,7 @@ int rollCounter;
 
         rollCounter = 5; // @todo: randomize this?
         [self showResults:[self roll] detailed:NO]; // prevents the delay effect when starting the timer
-        self.rollTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
+        self.rollTimer = [NSTimer scheduledTimerWithTimeInterval:0.05
                                                           target:self
                                                         selector:@selector(rollThreaded)
                                                         userInfo:nil
@@ -109,6 +109,11 @@ int rollCounter;
         amount = [title intValue];
     }
 
+    [self rollAnimated:YES];
+}
+
+- (IBAction)viewTapped:(id)sender
+{
     [self rollAnimated:YES];
 }
 

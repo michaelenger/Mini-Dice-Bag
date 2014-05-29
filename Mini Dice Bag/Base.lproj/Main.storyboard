@@ -100,11 +100,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="i8w-c2-bSr" secondAttribute="trailing" id="PR4-H1-FuK"/>
                                     <constraint firstItem="i8w-c2-bSr" firstAttribute="leading" secondItem="mzw-Me-hzI" secondAttribute="leading" id="TVN-Oj-zJL"/>
                                     <constraint firstAttribute="centerY" secondItem="i8w-c2-bSr" secondAttribute="centerY" id="hLw-ZY-xHa"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="LcU-I1-ydK" appends="YES" id="Vdi-aS-wEC"/>
+                                </connections>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="detailResult" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dD0-xy-2Zp">
                                 <rect key="frame" x="20" y="383" width="280" height="21"/>
@@ -214,6 +218,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="TPk-Hp-h9U" secondAttribute="bottom" constant="20" id="2je-NJ-ki6"/>
                             <constraint firstItem="dD0-xy-2Zp" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="3gR-os-9GS"/>
@@ -236,6 +241,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="LcU-I1-ydK">
+                    <connections>
+                        <action selector="viewTapped:" destination="vXZ-lx-hvc" id="YzV-YP-eqH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>
