@@ -81,9 +81,7 @@ int rollCounter;
     }
 
     if (detailed) {
-        detailResultLabel.text = amount <= 8 ? detailText : [NSString stringWithFormat:@"%dd%d", amount, die];
-    } else {
-        detailResultLabel.text = @"";
+        detailResultLabel.text = amount <= 20 ? detailText : [NSString stringWithFormat:@"%dd%d", amount, die];
     }
 
     mainResultLabel.text = [NSString stringWithFormat:@"%d", total];
