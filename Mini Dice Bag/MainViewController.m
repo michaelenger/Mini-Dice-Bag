@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "D20.h"
 
 @interface MainViewController ()
 
@@ -28,14 +29,7 @@ int rollCounter;
 
 - (NSArray *)roll
 {
-    NSMutableArray *results = [NSMutableArray arrayWithCapacity:amount];
-    int result;
-
-    for (int i = 0; i < amount; i++) {
-        result = arc4random_uniform(die) + 1;
-        results[i] = [NSNumber numberWithInt:result];
-    }
-
+    NSArray *results = [D20 detailedRoll:amount ofDie:die];
     return [results sortedArrayUsingSelector:@selector(compare:)];
 }
 
