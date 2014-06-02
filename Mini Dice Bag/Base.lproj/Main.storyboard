@@ -237,7 +237,9 @@
                     </view>
                     <connections>
                         <outlet property="detailResultLabel" destination="dD0-xy-2Zp" id="qVz-Jp-YSd"/>
+                        <outlet property="diceButtonContainerView" destination="TPk-Hp-h9U" id="w63-kK-q0p"/>
                         <outlet property="mainResultLabel" destination="i8w-c2-bSr" id="n7F-Jo-1kJ"/>
+                        <outlet property="numberButtonContainerView" destination="X7C-QV-BlI" id="fov-vT-dcg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

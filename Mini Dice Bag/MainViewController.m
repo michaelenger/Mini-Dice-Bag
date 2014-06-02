@@ -8,10 +8,12 @@
 
 #import "MainViewController.h"
 #import "D20.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface MainViewController ()
 
 @property (strong, nonatomic) NSTimer *rollTimer;
+@property (strong, nonatomic) UIColor *selectedButtonBackgroundColor;
 
 - (NSArray *)roll;
 - (void)rollAnimated:(BOOL)animated;
@@ -21,7 +23,7 @@
 @end
 
 @implementation MainViewController
-@synthesize detailResultLabel, mainResultLabel, rollTimer;
+@synthesize detailResultLabel, diceButtonContainerView, mainResultLabel, numberButtonContainerView, rollTimer, selectedButtonBackgroundColor;
 
 int amount = 1;
 int die = 20;
@@ -87,6 +89,17 @@ int rollCounter;
 {
     UIButton *button = (UIButton *)sender;
     die = [[button titleForState:UIControlStateNormal] intValue];
+
+    for (int i = 0; i < [diceButtonContainerView.subviews count]; i++) {
+        button = (UIButton *)[diceButtonContainerView.subviews objectAtIndex:i];
+
+        if ([[button titleForState:UIControlStateNormal] intValue] == die) {
+            button.layer.backgroundColor = self.selectedButtonBackgroundColor.CGColor;
+        } else {
+            button.layer.backgroundColor = [UIColor clearColor].CGColor;
+        }
+    }
+
     [self rollAnimated:YES];
 }
 
@@ -94,6 +107,16 @@ int rollCounter;
 {
     UIButton *button = (UIButton *)sender;
     NSString *title = [button titleForState:UIControlStateNormal];
+
+    for (int i = 0; i < [numberButtonContainerView.subviews count]; i++) {
+        button = (UIButton *)[numberButtonContainerView.subviews objectAtIndex:i];
+
+        if ([[button titleForState:UIControlStateNormal] isEqualToString:title]) {
+            button.layer.backgroundColor = self.selectedButtonBackgroundColor.CGColor;
+        } else {
+            button.layer.backgroundColor = [UIColor clearColor].CGColor;
+        }
+    }
 
     if ([title isEqualToString:@"+"]) {
         amount = amount <= 5 ? 6 : amount + 1;
@@ -113,7 +136,38 @@ int rollCounter;
 
 - (void)viewDidLoad
 {
+    UIButton *button;
+
     [super viewDidLoad];
+
+    self.selectedButtonBackgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.05f];
+
+    // Setup buttons
+    for (int i = 0; i < [numberButtonContainerView.subviews count]; i++) {
+        button = (UIButton *)[numberButtonContainerView.subviews objectAtIndex:i];
+        button.layer.cornerRadius = 10;
+        button.clipsToBounds = YES;
+
+        if (([[button titleForState:UIControlStateNormal] intValue] == amount)
+            || (amount > 5 && [[button titleForState:UIControlStateNormal] isEqualToString:@"+"])) {
+            button.layer.backgroundColor = self.selectedButtonBackgroundColor.CGColor;
+        } else {
+            button.layer.backgroundColor = [UIColor clearColor].CGColor;
+        }
+    }
+
+    for (int i = 0; i < [diceButtonContainerView.subviews count]; i++) {
+        button = (UIButton *)[diceButtonContainerView.subviews objectAtIndex:i];
+        button.layer.cornerRadius = 10;
+        button.clipsToBounds = YES;
+
+        if ([[button titleForState:UIControlStateNormal] intValue] == die) {
+            button.layer.backgroundColor = self.selectedButtonBackgroundColor.CGColor;
+        } else {
+            button.layer.backgroundColor = [UIColor clearColor].CGColor;
+        }
+    }
+
     [self rollAnimated:NO];
 }
 

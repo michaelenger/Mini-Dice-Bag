@@ -11,7 +11,9 @@
 @interface MainViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *detailResultLabel;
+@property (strong, nonatomic) IBOutlet UIView *diceButtonContainerView;
 @property (strong, nonatomic) IBOutlet UILabel *mainResultLabel;
+@property (strong, nonatomic) IBOutlet UIView *numberButtonContainerView;
 
 - (IBAction)dieTapped:(id)sender;
 - (IBAction)numberTapped:(id)sender;
