@@ -129,16 +129,21 @@ int rollCounter;
 - (IBAction)dieTapped:(id)sender
 {
     UIButton *button = (UIButton *)sender;
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     die = [[button titleForState:UIControlStateNormal] intValue];
 
     [self selectButton:button inRow:self.diceButtonContainerView];
     [self rollAnimated:YES];
+
+    [userDefaults setInteger:die forKey:@"die"];
+    [userDefaults synchronize];
 }
 
 - (IBAction)numberTapped:(id)sender
 {
     UIButton *button = (UIButton *)sender;
     NSString *title = [button titleForState:UIControlStateNormal];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
     if ([title isEqualToString:@"+"]) {
         amount = amount <= 5 ? 6 : amount + 1;
@@ -148,6 +153,9 @@ int rollCounter;
 
     [self selectButton:button inRow:self.numberButtonContainerView];
     [self rollAnimated:YES];
+
+    [userDefaults setInteger:amount forKey:@"amount"];
+    [userDefaults synchronize];
 }
 
 - (IBAction)viewTapped:(id)sender
@@ -159,6 +167,8 @@ int rollCounter;
 
 - (void)viewDidLoad
 {
+    int temp;
+
     [super viewDidLoad];
 
     self.colors = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -166,6 +176,12 @@ int rollCounter;
                    [UIColor darkTextColor], @"text",
                    [UIColor colorWithRed:0 green:0 blue:0 alpha:0.05f], @"buttonBackground",
                    [UIColor blueColor], @"buttonText", nil];
+
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    temp = (int)[userDefaults integerForKey:@"amount"];
+    amount = temp > 0 ? temp : 1;
+    temp = (int)[userDefaults integerForKey:@"die"];
+    die = temp > 0 ? temp : 20;
 
     [self setupButtonRow:self.numberButtonContainerView withNumber:amount];
     [self setupButtonRow:self.diceButtonContainerView withNumber:die];
