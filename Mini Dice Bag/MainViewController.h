@@ -14,9 +14,11 @@
 @property (strong, nonatomic) IBOutlet UIView *diceButtonContainerView;
 @property (strong, nonatomic) IBOutlet UILabel *mainResultLabel;
 @property (strong, nonatomic) IBOutlet UIView *numberButtonContainerView;
+@property (strong, nonatomic) IBOutlet UIView *overlayView;
 
 - (IBAction)dieTapped:(id)sender;
 - (IBAction)numberTapped:(id)sender;
+- (IBAction)overlayTapped:(id)sender;
 - (IBAction)viewTapped:(id)sender;
 
 @end
