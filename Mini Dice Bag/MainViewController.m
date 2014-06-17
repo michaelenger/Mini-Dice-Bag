@@ -39,6 +39,8 @@ int rollCounter;
 
 - (void)rollAnimated:(BOOL)animated
 {
+    self.navigationItem.title = [NSString stringWithFormat:@"%dd%d", amount, die];
+
     if (animated) {
         if (self.rollTimer && [self.rollTimer isValid]) {
             [self.rollTimer invalidate];
@@ -86,7 +88,6 @@ int rollCounter;
 {
     UIButton *button;
     int value;
-    UIColor *color = (UIColor *)[self.colors objectForKey:@"buttonBackground"];
     BOOL found = NO;
 
     for (int i = 0; i < [rowView.subviews count]; i++) {
@@ -97,11 +98,13 @@ int rollCounter;
 
         if ((value == number)
             || (!found && i == [rowView.subviews count] - 1)) {
-            button.layer.backgroundColor = color.CGColor;
             found = YES;
-        } else {
-            button.layer.backgroundColor = [UIColor clearColor].CGColor;
+            break;
         }
+    }
+
+    if (found) {
+        [self selectButton:button inRow:rowView];
     }
 }
 
@@ -118,7 +121,7 @@ int rollCounter;
     }
 
     if (detailed) {
-        detailResultLabel.text = amount <= 20 ? detailText : [NSString stringWithFormat:@"%dd%d", amount, die];
+        detailResultLabel.text = detailText;
     }
 
     mainResultLabel.text = [NSString stringWithFormat:@"%d", total];

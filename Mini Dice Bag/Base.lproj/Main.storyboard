@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="dqU-fq-vBz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="OFW-IO-SYw">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="dqU-fq-vBz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ef1-Is-abO">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="LqL-Y9-xAd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lf3-fH-RXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-150" y="158"/>
+        </scene>
+        <!--Main View Controller - ndn-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="MainViewController" sceneMemberID="viewController">
@@ -17,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7C-QV-BlI">
-                                <rect key="frame" x="20" y="30" width="280" height="46"/>
+                                <rect key="frame" x="20" y="74" width="280" height="46"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ns-Sv-oWM">
                                         <rect key="frame" x="0.0" y="0.0" width="46" height="46"/>
@@ -79,10 +94,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mzw-Me-hzI">
-                                <rect key="frame" x="20" y="84" width="280" height="262"/>
+                                <rect key="frame" x="20" y="128" width="280" height="218"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mainResult" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8w-c2-bSr">
-                                        <rect key="frame" x="0.0" y="94" width="280" height="74"/>
+                                        <rect key="frame" x="0.0" y="72" width="280" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="74" id="HSO-jw-77d"/>
                                         </constraints>
@@ -216,6 +231,7 @@
                             <constraint firstItem="dD0-xy-2Zp" firstAttribute="top" secondItem="mzw-Me-hzI" secondAttribute="bottom" constant="8" id="zeQ-Gi-xym"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="ndn" id="2P8-sA-ipx"/>
                     <connections>
                         <outlet property="detailResultLabel" destination="dD0-xy-2Zp" id="qVz-Jp-YSd"/>
                         <outlet property="diceButtonContainerView" destination="TPk-Hp-h9U" id="w63-kK-q0p"/>
