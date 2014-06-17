@@ -25,7 +25,7 @@
 @end
 
 @implementation MainViewController
-@synthesize colors, detailResultLabel, diceButtonContainerView, mainResultLabel, numberButtonContainerView, overlayView, rollTimer;
+@synthesize colors, detailResultLabel, diceButtonContainerView, mainResultLabel, numberButtonContainerView, rollTimer;
 
 int amount = 1;
 int die = 20;
@@ -158,15 +158,6 @@ int rollCounter;
     [userDefaults synchronize];
 }
 
-- (IBAction)overlayTapped:(id)sender
-{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setBool:YES forKey:@"instructions_seen"];
-    [userDefaults synchronize];
-    
-    [overlayView removeFromSuperview];
-}
-
 - (IBAction)viewTapped:(id)sender
 {
     [self rollAnimated:YES];
@@ -191,10 +182,6 @@ int rollCounter;
     amount = temp > 0 ? temp : 1;
     temp = (int)[userDefaults integerForKey:@"die"];
     die = temp > 0 ? temp : 20;
-    
-    if ([userDefaults boolForKey:@"instructions_seen"]) {
-        [overlayView removeFromSuperview];
-    }
 
     [self setupButtonRow:self.numberButtonContainerView withNumber:amount];
     [self setupButtonRow:self.diceButtonContainerView withNumber:die];
