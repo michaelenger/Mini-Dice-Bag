@@ -4,10 +4,11 @@
         <attribute name="amount" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="created" attributeType="Date" syncable="YES"/>
         <attribute name="die" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="modifier" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="results" attributeType="String" syncable="YES"/>
         <attribute name="total" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DiceRoll" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="DiceRoll" positionX="-63" positionY="-18" width="128" height="133"/>
     </elements>
 </model>

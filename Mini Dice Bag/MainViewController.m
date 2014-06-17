@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSDictionary *colors;
 @property (strong, nonatomic) NSTimer *rollTimer;
 
+- (NSString *)diceNotation;
 - (NSArray *)roll;
 - (void)rollAnimated:(BOOL)animated;
 - (void)rollThreaded;
@@ -25,26 +26,40 @@
 - (void)showResults:(NSString *)results total:(int)total;
 - (void)showTotal:(int)total;
 - (void)storeResults:(NSArray *)results;
+- (NSString *)stringFromResults:(NSArray *)results;
 
 @end
 
 @implementation MainViewController
-@synthesize colors, detailResultLabel, diceButtonContainerView, mainResultLabel, numberButtonContainerView, rollTimer;
+@synthesize colors, detailResultLabel, diceButtonContainerView, mainResultLabel, modifierLabel, modifierStepper, numberButtonContainerView, rollTimer;
 
 int amount = 1;
 int die = 20;
+int modifier = 0;
 int rollCounter;
+
+- (NSString *)diceNotation
+{
+    NSString *notation = [NSString stringWithFormat:@"%dd%d", amount, die];
+
+    if (modifier != 0) {
+        notation = modifier > 0
+            ? [notation stringByAppendingString:[NSString stringWithFormat:@"+%d", modifier]]
+            : [notation stringByAppendingString:[NSString stringWithFormat:@"%d", modifier]];
+    }
+
+    return notation;
+}
 
 - (NSArray *)roll
 {
-    NSArray *results = [D20 detailedRoll:amount ofDie:die];
-    return [results sortedArrayUsingSelector:@selector(compare:)];
+    return [D20 detailedRoll:amount ofDie:die];
 }
 
 - (void)rollAnimated:(BOOL)animated
 {
     NSArray *results;
-    self.navigationItem.title = [NSString stringWithFormat:@"%dd%d", amount, die];
+    self.navigationItem.title = [self diceNotation];
 
     if (animated) {
         if (self.rollTimer && [self.rollTimer isValid]) {
@@ -121,18 +136,18 @@ int rollCounter;
 
 - (void)showResults:(NSArray *)results detailed:(BOOL)detailed
 {
-    NSString *detailText = @"";
     int num;
     int total = 0;
 
     for (int i = 0; i < amount; i++) {
         num = [(NSNumber *)results[i] intValue];
-        detailText = [detailText stringByAppendingString:[NSString stringWithFormat:@" %d ", num]];
         total += num;
     }
 
+    total += modifier;
+
     if (detailed) {
-        [self showResults:detailText total:total];
+        [self showResults:[self stringFromResults:results] total:total];
     } else {
         [self showTotal:total];
     }
@@ -151,22 +166,43 @@ int rollCounter;
 
 - (void)storeResults:(NSArray *)results
 {
-    NSString *resultText = @"";
+    NSString *resultText = [self stringFromResults:results];
     int num;
     int total = 0;
 
     for (int i = 0; i < amount; i++) {
         num = [(NSNumber *)results[i] intValue];
-        resultText = [resultText stringByAppendingString:[NSString stringWithFormat:@" %d ", num]];
         total += num;
     }
+
+    total += modifier;
 
     DiceRoll *roll = [DiceRoll diceRoll];
     roll.amount = [NSNumber numberWithInt:amount];
     roll.die = [NSNumber numberWithInt:die];
+    roll.modifier = [NSNumber numberWithInt:modifier];
     roll.total = [NSNumber numberWithInt:total];
     roll.results = resultText;
     [roll save];
+}
+
+- (NSString *)stringFromResults:(NSArray *)results
+{
+    NSString *string = @"";
+    int num;
+
+    for (int i = 0; i < amount; i++) {
+        num = [(NSNumber *)results[i] intValue];
+        string = [string stringByAppendingString:[NSString stringWithFormat:@" %d ", num]];
+    }
+
+    if (modifier != 0) {
+        string = modifier > 0
+            ? [string stringByAppendingString:[NSString stringWithFormat:@" +%d ", modifier]]
+            : [string stringByAppendingString:[NSString stringWithFormat:@" %d ", modifier]];
+    }
+
+    return string;
 }
 
 #pragma mark IBAction
@@ -177,6 +213,14 @@ int rollCounter;
     die = [[button titleForState:UIControlStateNormal] intValue];
 
     [self selectButton:button inRow:self.diceButtonContainerView];
+    [self rollAnimated:YES];
+}
+
+- (IBAction)modifierChanged:(id)sender
+{
+    modifier = (int)self.modifierStepper.value;
+    self.modifierLabel.text = modifier >= 0 ? [NSString stringWithFormat:@"+%d", modifier] : [NSString stringWithFormat:@"%d", modifier];
+
     [self rollAnimated:YES];
 }
 
@@ -218,12 +262,15 @@ int rollCounter;
     if (first) {
         amount = first.amount.intValue;
         die = first.die.intValue;
-        self.navigationItem.title = [NSString stringWithFormat:@"%dd%d", amount, die];
+        modifier = first.modifier.intValue;
+        self.navigationItem.title = [self diceNotation];
         [self showResults:first.results total:first.total.intValue];
     } else {
         [self rollAnimated:NO];
     }
 
+    self.modifierLabel.text = modifier >= 0 ? [NSString stringWithFormat:@"+%d", modifier] : [NSString stringWithFormat:@"%d", modifier];
+    self.modifierStepper.value = modifier;
     [self setupButtonRow:self.numberButtonContainerView withNumber:amount];
     [self setupButtonRow:self.diceButtonContainerView withNumber:die];
 }

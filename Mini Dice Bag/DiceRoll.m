@@ -13,6 +13,7 @@
 
 @dynamic amount;
 @dynamic die;
+@dynamic modifier;
 @dynamic results;
 @dynamic total;
 @dynamic created;
@@ -33,12 +34,7 @@
     fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"created" ascending:NO]];
     fetchRequest.fetchLimit = 100;
 
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (DiceRoll *roll in fetchedObjects) {
-        NSLog(@"%dd%d=%d", roll.amount.intValue, roll.die.intValue, roll.total.intValue);
-    }
-
-    return fetchedObjects;
+    return [context executeFetchRequest:fetchRequest error:&error];
 }
 
 + (DiceRoll *)diceRoll

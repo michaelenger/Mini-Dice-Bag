@@ -13,6 +13,7 @@
 
 @property (nonatomic, retain) NSNumber * amount;
 @property (nonatomic, retain) NSNumber * die;
+@property (nonatomic, retain) NSNumber * modifier;
 @property (nonatomic, retain) NSString * results;
 @property (nonatomic, retain) NSNumber * total;
 @property (nonatomic, retain) NSDate * created;

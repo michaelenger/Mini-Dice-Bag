@@ -35,9 +35,17 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"diceRollCell" forIndexPath:indexPath];
     DiceRoll *roll = (DiceRoll *)[self.objects objectAtIndex:indexPath.row];
+    NSString *notation = [NSString stringWithFormat:@"%dd%d", roll.amount.intValue, roll.die.intValue];
+    int modifier = roll.modifier.intValue;
+
+    if (modifier != 0) {
+        notation = modifier > 0
+        ? [notation stringByAppendingString:[NSString stringWithFormat:@"+%d", modifier]]
+        : [notation stringByAppendingString:[NSString stringWithFormat:@"%d", modifier]];
+    }
 
     cell.textLabel.text = [NSString stringWithFormat:@"%d", roll.total.intValue];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%dd%d", roll.amount.intValue, roll.die.intValue];
+    cell.detailTextLabel.text = notation;
     
     return cell;
 }
