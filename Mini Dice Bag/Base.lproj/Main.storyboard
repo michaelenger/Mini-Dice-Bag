@@ -17,7 +17,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lf3-fH-RXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-150" y="158"/>
+            <point key="canvasLocation" x="-101" y="-11"/>
         </scene>
         <!--Main View Controller - ndn-->
         <scene sceneID="ufC-wZ-h7g">
@@ -231,7 +231,13 @@
                             <constraint firstItem="dD0-xy-2Zp" firstAttribute="top" secondItem="mzw-Me-hzI" secondAttribute="bottom" constant="8" id="zeQ-Gi-xym"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ndn" id="2P8-sA-ipx"/>
+                    <navigationItem key="navigationItem" title="ndn" id="2P8-sA-ipx">
+                        <barButtonItem key="rightBarButtonItem" image="icon-log" id="Obb-XA-Gml">
+                            <connections>
+                                <segue destination="qCJ-MG-nnX" kind="push" customClass="FlipStoryboardSegue" id="dL0-hC-0oC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailResultLabel" destination="dD0-xy-2Zp" id="qVz-Jp-YSd"/>
                         <outlet property="diceButtonContainerView" destination="TPk-Hp-h9U" id="w63-kK-q0p"/>
@@ -246,6 +252,52 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="360" y="-11"/>
+        </scene>
+        <!--Roll Log Table View Controller - Roll Log-->
+        <scene sceneID="mXZ-Km-dSP">
+            <objects>
+                <tableViewController id="qCJ-MG-nnX" customClass="RollLogTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ckQ-EQ-1qW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="diceRollCell" textLabel="6tg-KX-0jS" detailTextLabel="MbA-Qs-VCV" style="IBUITableViewCellStyleValue1" id="r26-Uc-dbJ">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r26-Uc-dbJ" id="02r-M1-vTg">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6tg-KX-0jS">
+                                            <rect key="frame" x="15" y="11" width="33" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MbA-Qs-VCV">
+                                            <rect key="frame" x="261" y="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qCJ-MG-nnX" id="h0j-dR-FfR"/>
+                            <outlet property="delegate" destination="qCJ-MG-nnX" id="ygW-nr-RXL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Roll Log" id="gaF-Gc-IIH"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HRL-2O-vNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829" y="-11"/>
         </scene>
     </scenes>
     <resources>
@@ -257,6 +309,7 @@
         <image name="d4" width="60" height="60"/>
         <image name="d6" width="60" height="60"/>
         <image name="d8" width="60" height="60"/>
+        <image name="icon-log" width="19" height="19"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

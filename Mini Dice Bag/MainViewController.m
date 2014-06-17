@@ -88,6 +88,7 @@ int rollCounter;
 
         if (button == targetButton) {
             button.layer.backgroundColor = color.CGColor;
+            button.layer.cornerRadius = 5;
         } else {
             button.layer.backgroundColor = [UIColor clearColor].CGColor;
         }
