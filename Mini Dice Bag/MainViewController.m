@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "D20.h"
+#import "DiceRoll.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface MainViewController ()
@@ -21,6 +22,9 @@
 - (void)selectButton:(UIButton *)targetButton inRow:(UIView *)rowView;
 - (void)setupButtonRow:(UIView *)rowView withNumber:(int)number;
 - (void)showResults:(NSArray *)results detailed:(BOOL)detailed;
+- (void)showResults:(NSString *)results total:(int)total;
+- (void)showTotal:(int)total;
+- (void)storeResults:(NSArray *)results;
 
 @end
 
@@ -39,6 +43,7 @@ int rollCounter;
 
 - (void)rollAnimated:(BOOL)animated
 {
+    NSArray *results;
     self.navigationItem.title = [NSString stringWithFormat:@"%dd%d", amount, die];
 
     if (animated) {
@@ -54,17 +59,22 @@ int rollCounter;
                                                         userInfo:nil
                                                          repeats:YES];
     } else {
-        [self showResults:[self roll] detailed:YES];
+        results = [self roll];
+        [self showResults:results detailed:YES];
+        [self storeResults:results];
     }
 }
 
 - (void)rollThreaded
 {
+    NSArray *results = [self roll];
+
     if (--rollCounter <= 0) {
-        [self showResults:[self roll] detailed:YES];
+        [self showResults:results detailed:YES];
+        [self storeResults:results];
         [self.rollTimer invalidate];
     } else {
-        [self showResults:[self roll] detailed:NO];
+        [self showResults:results detailed:NO];
     }
 }
 
@@ -121,10 +131,41 @@ int rollCounter;
     }
 
     if (detailed) {
-        detailResultLabel.text = detailText;
+        [self showResults:detailText total:total];
+    } else {
+        [self showTotal:total];
+    }
+}
+
+- (void)showResults:(NSString *)results total:(int)total
+{
+    self.detailResultLabel.text = results;
+    [self showTotal:total];
+}
+
+- (void)showTotal:(int)total
+{
+    self.mainResultLabel.text = [NSString stringWithFormat:@"%d", total];
+}
+
+- (void)storeResults:(NSArray *)results
+{
+    NSString *resultText = @"";
+    int num;
+    int total = 0;
+
+    for (int i = 0; i < amount; i++) {
+        num = [(NSNumber *)results[i] intValue];
+        resultText = [resultText stringByAppendingString:[NSString stringWithFormat:@" %d ", num]];
+        total += num;
     }
 
-    mainResultLabel.text = [NSString stringWithFormat:@"%d", total];
+    DiceRoll *roll = [DiceRoll diceRoll];
+    roll.amount = [NSNumber numberWithInt:amount];
+    roll.die = [NSNumber numberWithInt:die];
+    roll.total = [NSNumber numberWithInt:total];
+    roll.results = resultText;
+    [roll save];
 }
 
 #pragma mark IBAction
@@ -132,21 +173,16 @@ int rollCounter;
 - (IBAction)dieTapped:(id)sender
 {
     UIButton *button = (UIButton *)sender;
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     die = [[button titleForState:UIControlStateNormal] intValue];
 
     [self selectButton:button inRow:self.diceButtonContainerView];
     [self rollAnimated:YES];
-
-    [userDefaults setInteger:die forKey:@"die"];
-    [userDefaults synchronize];
 }
 
 - (IBAction)numberTapped:(id)sender
 {
     UIButton *button = (UIButton *)sender;
     NSString *title = [button titleForState:UIControlStateNormal];
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
     if ([title isEqualToString:@"+"]) {
         amount = amount <= 5 ? 6 : amount + 1;
@@ -156,9 +192,6 @@ int rollCounter;
 
     [self selectButton:button inRow:self.numberButtonContainerView];
     [self rollAnimated:YES];
-
-    [userDefaults setInteger:amount forKey:@"amount"];
-    [userDefaults synchronize];
 }
 
 - (IBAction)viewTapped:(id)sender
@@ -170,7 +203,7 @@ int rollCounter;
 
 - (void)viewDidLoad
 {
-    int temp;
+    DiceRoll *first;
 
     [super viewDidLoad];
 
@@ -180,15 +213,18 @@ int rollCounter;
                    [UIColor colorWithRed:0 green:0 blue:0 alpha:0.05f], @"buttonBackground",
                    [UIColor blueColor], @"buttonText", nil];
 
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    temp = (int)[userDefaults integerForKey:@"amount"];
-    amount = temp > 0 ? temp : 1;
-    temp = (int)[userDefaults integerForKey:@"die"];
-    die = temp > 0 ? temp : 20;
+    first = [DiceRoll first];
+    if (first) {
+        amount = first.amount.intValue;
+        die = first.die.intValue;
+        self.navigationItem.title = [NSString stringWithFormat:@"%dd%d", amount, die];
+        [self showResults:first.results total:first.total.intValue];
+    } else {
+        [self rollAnimated:NO];
+    }
 
     [self setupButtonRow:self.numberButtonContainerView withNumber:amount];
     [self setupButtonRow:self.diceButtonContainerView withNumber:die];
-    [self rollAnimated:NO];
 }
 
 @end

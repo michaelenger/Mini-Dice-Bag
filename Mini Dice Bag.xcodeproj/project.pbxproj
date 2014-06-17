@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C30DB121950B3B200C2F007 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30DB111950B3B200C2F007 /* CoreData.framework */; };
+		4C30DB151950B3E200C2F007 /* Mini-Dice-Bag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DB131950B3E200C2F007 /* Mini-Dice-Bag.xcdatamodeld */; };
+		4C30DB1C1950B68800C2F007 /* DiceRoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DB1B1950B68800C2F007 /* DiceRoll.m */; };
 		4C67E71F1936632400CFD7A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C67E71E1936632400CFD7A9 /* Foundation.framework */; };
 		4C67E7211936632400CFD7A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C67E7201936632400CFD7A9 /* CoreGraphics.framework */; };
 		4C67E7231936632400CFD7A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C67E7221936632400CFD7A9 /* UIKit.framework */; };
@@ -36,6 +39,10 @@
 
 /* Begin PBXFileReference section */
 		3CAA28FC317A423D809C0B84 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C30DB111950B3B200C2F007 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4C30DB141950B3E200C2F007 /* Mini-Dice-Bag.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Mini-Dice-Bag.xcdatamodel"; sourceTree = "<group>"; };
+		4C30DB1A1950B68800C2F007 /* DiceRoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiceRoll.h; sourceTree = "<group>"; };
+		4C30DB1B1950B68800C2F007 /* DiceRoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiceRoll.m; sourceTree = "<group>"; };
 		4C67E71B1936632400CFD7A9 /* Mini Dice Bag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Dice Bag.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C67E71E1936632400CFD7A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C67E7201936632400CFD7A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C30DB121950B3B200C2F007 /* CoreData.framework in Frameworks */,
 				4C67E7211936632400CFD7A9 /* CoreGraphics.framework in Frameworks */,
 				4C67E7231936632400CFD7A9 /* UIKit.framework in Frameworks */,
 				4C67E71F1936632400CFD7A9 /* Foundation.framework in Frameworks */,
@@ -83,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C30DB161950B47D00C2F007 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				4C30DB1A1950B68800C2F007 /* DiceRoll.h */,
+				4C30DB1B1950B68800C2F007 /* DiceRoll.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
 		4C67E7121936632400CFD7A9 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +123,7 @@
 		4C67E71D1936632400CFD7A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C30DB111950B3B200C2F007 /* CoreData.framework */,
 				4C67E71E1936632400CFD7A9 /* Foundation.framework */,
 				4C67E7201936632400CFD7A9 /* CoreGraphics.framework */,
 				4C67E7221936632400CFD7A9 /* UIKit.framework */,
@@ -124,6 +142,8 @@
 				4C67E7331936632400CFD7A9 /* MainViewController.h */,
 				4C67E7341936632400CFD7A9 /* MainViewController.m */,
 				4C67E7361936632400CFD7A9 /* Images.xcassets */,
+				4C30DB131950B3E200C2F007 /* Mini-Dice-Bag.xcdatamodeld */,
+				4C30DB161950B47D00C2F007 /* Entities */,
 				4C67E7251936632400CFD7A9 /* Supporting Files */,
 			);
 			path = "Mini Dice Bag";
@@ -293,6 +313,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C30DB1C1950B68800C2F007 /* DiceRoll.m in Sources */,
+				4C30DB151950B3E200C2F007 /* Mini-Dice-Bag.xcdatamodeld in Sources */,
 				4C67E7351936632400CFD7A9 /* MainViewController.m in Sources */,
 				4C67E72F1936632400CFD7A9 /* AppDelegate.m in Sources */,
 				4C67E72B1936632400CFD7A9 /* main.m in Sources */,
@@ -518,6 +540,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4C30DB131950B3E200C2F007 /* Mini-Dice-Bag.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4C30DB141950B3E200C2F007 /* Mini-Dice-Bag.xcdatamodel */,
+			);
+			currentVersion = 4C30DB141950B3E200C2F007 /* Mini-Dice-Bag.xcdatamodel */;
+			path = "Mini-Dice-Bag.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4C67E7131936632400CFD7A9 /* Project object */;
 }

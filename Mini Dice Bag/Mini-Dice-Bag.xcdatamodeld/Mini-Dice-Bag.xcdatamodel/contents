@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="DiceRoll" representedClassName="DiceRoll" syncable="YES">
+        <attribute name="amount" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="created" attributeType="Date" syncable="YES"/>
+        <attribute name="die" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="results" attributeType="String" syncable="YES"/>
+        <attribute name="total" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DiceRoll" positionX="-63" positionY="-18" width="128" height="118"/>
+    </elements>
+</model>
