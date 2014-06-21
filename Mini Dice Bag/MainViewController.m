@@ -31,7 +31,7 @@
 @end
 
 @implementation MainViewController
-@synthesize colors, detailResultLabel, diceButtonContainerView, mainResultLabel, modifierLabel, modifierStepper, numberButtonContainerView, rollTimer;
+@synthesize colors, detailResultLabel, diceButtonContainerView, mainResultLabel, numberButtonContainerView, rollTimer;
 
 int amount = 1;
 int die = 20;
@@ -216,10 +216,12 @@ int rollCounter;
     [self rollAnimated:YES];
 }
 
-- (IBAction)modifierChanged:(id)sender
+- (IBAction)modifierTapped:(id)sender
 {
-    modifier = (int)self.modifierStepper.value;
-    self.modifierLabel.text = modifier >= 0 ? [NSString stringWithFormat:@"+%d", modifier] : [NSString stringWithFormat:@"%d", modifier];
+    UIButton *button = (UIButton *)sender;
+    NSString *buttonTitle = [button titleForState:UIControlStateNormal];
+
+    modifier += [buttonTitle isEqualToString:@"+"] ? 1 : -1;
 
     [self rollAnimated:YES];
 }
@@ -269,8 +271,6 @@ int rollCounter;
         [self rollAnimated:NO];
     }
 
-    self.modifierLabel.text = modifier >= 0 ? [NSString stringWithFormat:@"+%d", modifier] : [NSString stringWithFormat:@"%d", modifier];
-    self.modifierStepper.value = modifier;
     [self setupButtonRow:self.numberButtonContainerView withNumber:amount];
     [self setupButtonRow:self.diceButtonContainerView withNumber:die];
 }

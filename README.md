@@ -18,6 +18,11 @@ The app uses [CocoaPods](http://cocoapods.org/) to handle dependencies. Run `pod
 * The selected die and amount are stored between sessions
 * An instructions overlay is shown when you open the app for the first time
 
+#### 1.2
+
+* Add a modifier to the dice roll
+* See a log of all performed dice rolls
+
 ## License
 
 Copyright 2014 Michael Enger
