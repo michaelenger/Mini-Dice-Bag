@@ -37,6 +37,7 @@ int amount = 1;
 int die = 20;
 int modifier = 0;
 int rollCounter;
+bool shakeToRoll = NO;
 
 - (NSString *)diceNotation
 {
@@ -249,6 +250,21 @@ int rollCounter;
 
 #pragma mark UIViewController
 
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (shakeToRoll && event.subtype == UIEventSubtypeMotionShake) {
+        [self rollAnimated:YES];
+    }
+
+    if ([super respondsToSelector:@selector(motionEnded:withEvent:)]) {
+        [super motionEnded:motion withEvent:event];
+    }
+}
+
 - (void)viewDidLoad
 {
     DiceRoll *first;
@@ -274,6 +290,14 @@ int rollCounter;
 
     [self setupButtonRow:self.numberButtonContainerView withNumber:amount];
     [self setupButtonRow:self.diceButtonContainerView withNumber:die];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    shakeToRoll = [userDefaults boolForKey:@"shake"];
 }
 
 @end

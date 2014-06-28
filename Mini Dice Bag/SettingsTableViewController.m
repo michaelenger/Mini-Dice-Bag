@@ -19,7 +19,7 @@
 
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *biasString = [userDefaults stringForKey:@"bias"];
-NSLog(@"BIAS: %@", biasString);
+
     if ([biasString isEqualToString:@"low"]) {
         self.biasControl.selectedSegmentIndex = 1;
     } else if ([biasString isEqualToString:@"high"]) {
