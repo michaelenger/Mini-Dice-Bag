@@ -8,8 +8,13 @@
         <scene sceneID="OFW-IO-SYw">
             <objects>
                 <navigationController definesPresentationContext="YES" id="dqU-fq-vBz" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ef1-Is-abO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="ef1-Is-abO">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.14673913043478259" green="0.14673913043478259" blue="0.14673913043478259" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="LqL-Y9-xAd"/>
@@ -28,11 +33,11 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7C-QV-BlI">
-                                <rect key="frame" x="20" y="74" width="280" height="46"/>
+                                <rect key="frame" x="20" y="10" width="280" height="46"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ns-Sv-oWM">
                                         <rect key="frame" x="0.0" y="0.0" width="46" height="46"/>
@@ -94,14 +99,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mzw-Me-hzI">
-                                <rect key="frame" x="20" y="128" width="280" height="158"/>
+                                <rect key="frame" x="20" y="64" width="280" height="158"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mainResult" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8w-c2-bSr">
                                         <rect key="frame" x="0.0" y="42" width="280" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="74" id="g0g-Nn-GFN"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="62"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="72"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -117,7 +122,7 @@
                                 </connections>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="detailResult" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="dD0-xy-2Zp">
-                                <rect key="frame" x="20" y="294" width="280" height="50"/>
+                                <rect key="frame" x="20" y="230" width="280" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1WK-i4-9oJ"/>
                                 </constraints>
@@ -126,7 +131,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPk-Hp-h9U">
-                                <rect key="frame" x="20" y="352" width="280" height="108"/>
+                                <rect key="frame" x="20" y="288" width="280" height="108"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJS-3f-xVZ">
                                         <rect key="frame" x="2" y="0.0" width="50" height="50"/>
@@ -252,7 +257,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ndn" id="2P8-sA-ipx">
-                        <barButtonItem key="rightBarButtonItem" image="icon-log" id="Obb-XA-Gml">
+                        <barButtonItem key="rightBarButtonItem" image="list" id="Obb-XA-Gml">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="qCJ-MG-nnX" kind="push" customClass="FlipStoryboardSegue" id="dL0-hC-0oC"/>
                             </connections>
@@ -279,12 +285,12 @@
             <objects>
                 <tableViewController id="qCJ-MG-nnX" customClass="RollLogTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ckQ-EQ-1qW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="diceRollCell" textLabel="6tg-KX-0jS" detailTextLabel="MbA-Qs-VCV" style="IBUITableViewCellStyleValue1" id="r26-Uc-dbJ">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r26-Uc-dbJ" id="02r-M1-vTg">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -329,7 +335,7 @@
         <image name="d4" width="50" height="50"/>
         <image name="d6" width="50" height="50"/>
         <image name="d8" width="50" height="50"/>
-        <image name="icon-log" width="19" height="19"/>
+        <image name="list" width="19" height="19"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
