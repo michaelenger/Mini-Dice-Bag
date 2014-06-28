@@ -188,11 +188,12 @@ int rollCounter;
 
 - (NSString *)stringFromResults:(NSArray *)results
 {
+    NSArray* sortedResults = [results sortedArrayUsingSelector:@selector(compare:)];
     NSString *string = @"";
     int num;
 
     for (int i = 0; i < amount; i++) {
-        num = [(NSNumber *)results[i] intValue];
+        num = [(NSNumber *)sortedResults[i] intValue];
         string = [string stringByAppendingString:[NSString stringWithFormat:@" %d ", num]];
     }
 
