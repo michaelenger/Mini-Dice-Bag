@@ -38,6 +38,7 @@ int die = 20;
 int modifier = 0;
 int rollCounter;
 bool shakeToRoll = NO;
+NSString *rollBias = @"none";
 
 - (NSString *)diceNotation
 {
@@ -54,7 +55,15 @@ bool shakeToRoll = NO;
 
 - (NSArray *)roll
 {
-    return [D20 detailedRoll:amount ofDie:die];
+    int half = die / 2;
+
+    if ([rollBias isEqualToString:@"low"]) {
+        return [D20 detailedRoll:amount ofDie:half];
+    } else if ([rollBias isEqualToString:@"high"]) {
+        return [D20 detailedRoll:amount ofDie:die withMin:half];
+    } else {
+        return [D20 detailedRoll:amount ofDie:die];
+    }
 }
 
 - (void)rollAnimated:(BOOL)animated
@@ -298,6 +307,7 @@ bool shakeToRoll = NO;
 
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     shakeToRoll = [userDefaults boolForKey:@"shake"];
+    rollBias = [userDefaults stringForKey:@"bias"];
 }
 
 @end

@@ -4,7 +4,8 @@ Tiny app for rolling RPG dice.
 
 ## Requirements
 
-The app uses [CocoaPods](http://cocoapods.org/) to handle dependencies. Run `pod install` in the root directory to install the requirements.
+* iOS 7.1
+* XCode 5
 
 ## Changelog
 

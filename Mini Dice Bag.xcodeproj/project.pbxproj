@@ -12,6 +12,7 @@
 		4C30DB1C1950B68800C2F007 /* DiceRoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DB1B1950B68800C2F007 /* DiceRoll.m */; };
 		4C30DB221950BF1700C2F007 /* RollLogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DB211950BF1700C2F007 /* RollLogTableViewController.m */; };
 		4C5BB6C9195F65A800EEF28B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5BB6C8195F65A800EEF28B /* SettingsTableViewController.m */; };
+		4C5BB6CC195F6D2200EEF28B /* D20.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5BB6CB195F6D2200EEF28B /* D20.m */; };
 		4C67E71F1936632400CFD7A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C67E71E1936632400CFD7A9 /* Foundation.framework */; };
 		4C67E7211936632400CFD7A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C67E7201936632400CFD7A9 /* CoreGraphics.framework */; };
 		4C67E7231936632400CFD7A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C67E7221936632400CFD7A9 /* UIKit.framework */; };
@@ -26,7 +27,6 @@
 		4C67E7401936632400CFD7A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C67E7221936632400CFD7A9 /* UIKit.framework */; };
 		4C67E7481936632400CFD7A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C67E7461936632400CFD7A9 /* InfoPlist.strings */; };
 		4C67E74A1936632400CFD7A9 /* Mini_Dice_BagTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67E7491936632400CFD7A9 /* Mini_Dice_BagTests.m */; };
-		DAF324E478E74DFE9B66362F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CAA28FC317A423D809C0B84 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3CAA28FC317A423D809C0B84 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C30DB111950B3B200C2F007 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4C30DB141950B3E200C2F007 /* Mini-Dice-Bag.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Mini-Dice-Bag.xcdatamodel"; sourceTree = "<group>"; };
 		4C30DB1A1950B68800C2F007 /* DiceRoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiceRoll.h; sourceTree = "<group>"; };
@@ -49,6 +48,8 @@
 		4C30DB211950BF1700C2F007 /* RollLogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollLogTableViewController.m; sourceTree = "<group>"; };
 		4C5BB6C7195F65A800EEF28B /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		4C5BB6C8195F65A800EEF28B /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		4C5BB6CA195F6D2200EEF28B /* D20.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D20.h; sourceTree = "<group>"; };
+		4C5BB6CB195F6D2200EEF28B /* D20.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D20.m; sourceTree = "<group>"; };
 		4C67E71B1936632400CFD7A9 /* Mini Dice Bag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Dice Bag.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C67E71E1936632400CFD7A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C67E7201936632400CFD7A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,7 +69,6 @@
 		4C67E7451936632400CFD7A9 /* Mini Dice BagTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mini Dice BagTests-Info.plist"; sourceTree = "<group>"; };
 		4C67E7471936632400CFD7A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C67E7491936632400CFD7A9 /* Mini_Dice_BagTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mini_Dice_BagTests.m; sourceTree = "<group>"; };
-		9AB0FE0E450147C89DCE2AFD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,6 @@
 				4C67E7211936632400CFD7A9 /* CoreGraphics.framework in Frameworks */,
 				4C67E7231936632400CFD7A9 /* UIKit.framework in Frameworks */,
 				4C67E71F1936632400CFD7A9 /* Foundation.framework in Frameworks */,
-				DAF324E478E74DFE9B66362F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +112,6 @@
 				4C67E7431936632400CFD7A9 /* Mini Dice BagTests */,
 				4C67E71D1936632400CFD7A9 /* Frameworks */,
 				4C67E71C1936632400CFD7A9 /* Products */,
-				9AB0FE0E450147C89DCE2AFD /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,7 +132,6 @@
 				4C67E7201936632400CFD7A9 /* CoreGraphics.framework */,
 				4C67E7221936632400CFD7A9 /* UIKit.framework */,
 				4C67E73D1936632400CFD7A9 /* XCTest.framework */,
-				3CAA28FC317A423D809C0B84 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -144,6 +141,8 @@
 			children = (
 				4C67E72D1936632400CFD7A9 /* AppDelegate.h */,
 				4C67E72E1936632400CFD7A9 /* AppDelegate.m */,
+				4C5BB6CA195F6D2200EEF28B /* D20.h */,
+				4C5BB6CB195F6D2200EEF28B /* D20.m */,
 				4C67E7331936632400CFD7A9 /* MainViewController.h */,
 				4C67E7341936632400CFD7A9 /* MainViewController.m */,
 				4C30DB201950BF1700C2F007 /* RollLogTableViewController.h */,
@@ -195,11 +194,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C67E74D1936632400CFD7A9 /* Build configuration list for PBXNativeTarget "Mini Dice Bag" */;
 			buildPhases = (
-				B4E9C58FBA15434DA2847659 /* Check Pods Manifest.lock */,
 				4C67E7171936632400CFD7A9 /* Sources */,
 				4C67E7181936632400CFD7A9 /* Frameworks */,
 				4C67E7191936632400CFD7A9 /* Resources */,
-				DB28838197444E7D85D1A26B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,39 +282,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		B4E9C58FBA15434DA2847659 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DB28838197444E7D85D1A26B /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		4C67E7171936632400CFD7A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -329,6 +293,7 @@
 				4C67E7351936632400CFD7A9 /* MainViewController.m in Sources */,
 				4C67E72F1936632400CFD7A9 /* AppDelegate.m in Sources */,
 				4C67E72B1936632400CFD7A9 /* main.m in Sources */,
+				4C5BB6CC195F6D2200EEF28B /* D20.m in Sources */,
 				4C30DB221950BF1700C2F007 /* RollLogTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,7 +416,6 @@
 		};
 		4C67E74E1936632400CFD7A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AB0FE0E450147C89DCE2AFD /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -467,7 +431,6 @@
 		};
 		4C67E74F1936632400CFD7A9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AB0FE0E450147C89DCE2AFD /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
