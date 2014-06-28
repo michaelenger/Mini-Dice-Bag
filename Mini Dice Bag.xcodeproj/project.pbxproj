@@ -11,6 +11,7 @@
 		4C30DB151950B3E200C2F007 /* Mini-Dice-Bag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DB131950B3E200C2F007 /* Mini-Dice-Bag.xcdatamodeld */; };
 		4C30DB1C1950B68800C2F007 /* DiceRoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DB1B1950B68800C2F007 /* DiceRoll.m */; };
 		4C30DB221950BF1700C2F007 /* RollLogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DB211950BF1700C2F007 /* RollLogTableViewController.m */; };
+		4C5BB6C9195F65A800EEF28B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5BB6C8195F65A800EEF28B /* SettingsTableViewController.m */; };
 		4C67E71F1936632400CFD7A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C67E71E1936632400CFD7A9 /* Foundation.framework */; };
 		4C67E7211936632400CFD7A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C67E7201936632400CFD7A9 /* CoreGraphics.framework */; };
 		4C67E7231936632400CFD7A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C67E7221936632400CFD7A9 /* UIKit.framework */; };
@@ -46,6 +47,8 @@
 		4C30DB1B1950B68800C2F007 /* DiceRoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiceRoll.m; sourceTree = "<group>"; };
 		4C30DB201950BF1700C2F007 /* RollLogTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollLogTableViewController.h; sourceTree = "<group>"; };
 		4C30DB211950BF1700C2F007 /* RollLogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollLogTableViewController.m; sourceTree = "<group>"; };
+		4C5BB6C7195F65A800EEF28B /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		4C5BB6C8195F65A800EEF28B /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		4C67E71B1936632400CFD7A9 /* Mini Dice Bag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Dice Bag.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C67E71E1936632400CFD7A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C67E7201936632400CFD7A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -145,6 +148,8 @@
 				4C67E7341936632400CFD7A9 /* MainViewController.m */,
 				4C30DB201950BF1700C2F007 /* RollLogTableViewController.h */,
 				4C30DB211950BF1700C2F007 /* RollLogTableViewController.m */,
+				4C5BB6C7195F65A800EEF28B /* SettingsTableViewController.h */,
+				4C5BB6C8195F65A800EEF28B /* SettingsTableViewController.m */,
 				4C67E7301936632400CFD7A9 /* Main.storyboard */,
 				4C67E7361936632400CFD7A9 /* Images.xcassets */,
 				4C30DB131950B3E200C2F007 /* Mini-Dice-Bag.xcdatamodeld */,
@@ -318,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5BB6C9195F65A800EEF28B /* SettingsTableViewController.m in Sources */,
 				4C30DB1C1950B68800C2F007 /* DiceRoll.m in Sources */,
 				4C30DB151950B3E200C2F007 /* Mini-Dice-Bag.xcdatamodeld in Sources */,
 				4C67E7351936632400CFD7A9 /* MainViewController.m in Sources */,
