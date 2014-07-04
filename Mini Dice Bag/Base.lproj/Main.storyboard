@@ -320,7 +320,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Roll Log" id="gaF-Gc-IIH">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="OF3-Wx-Aus">
+                        <barButtonItem key="rightBarButtonItem" image="cog" id="OF3-Wx-Aus">
                             <connections>
                                 <segue destination="7r0-2B-IZB" kind="push" id="u6S-SL-C5r"/>
                             </connections>
@@ -408,6 +408,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cog" width="19" height="19"/>
         <image name="d10" width="50" height="50"/>
         <image name="d100" width="50" height="50"/>
         <image name="d12" width="50" height="50"/>
