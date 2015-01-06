@@ -1,6 +1,6 @@
 # Mini Dice Bag
 
-Tiny app for rolling RPG dice.
+Tiny app for rolling RPG dice. Tentatively available on the [App Store](https://itunes.apple.com/app/mini-dice-bag/id884243561?mt=8).
 
 ## Requirements
 
@@ -27,4 +27,3 @@ Tiny app for rolling RPG dice.
 ## License
 
 Copyright 2014 Michael Enger
-
