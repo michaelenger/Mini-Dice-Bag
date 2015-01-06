@@ -2,6 +2,8 @@
 
 Tiny app for rolling RPG dice. Tentatively available on the [App Store](https://itunes.apple.com/app/mini-dice-bag/id884243561?mt=8).
 
+![Screenshot](https://raw.githubusercontent.com/michaelenger/Mini-Dice-Bag/master/Assets/iPhonePortrait@R4-1.png)
+
 ## Requirements
 
 * iOS 7.1
