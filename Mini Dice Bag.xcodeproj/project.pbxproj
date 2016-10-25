@@ -235,7 +235,8 @@
 				ORGANIZATIONNAME = "Michael Enger";
 				TargetAttributes = {
 					4C67E71A1936632400CFD7A9 = {
-						DevelopmentTeam = NR236N98VA;
+						DevelopmentTeam = 49286ETHF3;
+						ProvisioningStyle = Automatic;
 					};
 					4C67E73B1936632400CFD7A9 = {
 						TestTargetID = 4C67E71A1936632400CFD7A9;
@@ -420,11 +421,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 49286ETHF3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mini Dice Bag/Mini Dice Bag-Prefix.pch";
 				INFOPLIST_FILE = "Mini Dice Bag/Mini Dice Bag-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "CA848CC5-F336-43AA-B9B9-1713BAC81B4F";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -435,11 +438,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 49286ETHF3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mini Dice Bag/Mini Dice Bag-Prefix.pch";
 				INFOPLIST_FILE = "Mini Dice Bag/Mini Dice Bag-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "CA848CC5-F336-43AA-B9B9-1713BAC81B4F";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
